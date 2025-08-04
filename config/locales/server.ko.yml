@@ -1,0 +1,4 @@
+ko:
+  site_settings:
+    community_fortune_enabled: "커뮤니티 운세 사용"
+    community_fortune_enabled_description: "검색 페이지에 무작위 운세 배너를 표시합니다"
