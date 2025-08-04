@@ -1,0 +1,4 @@
+en:
+  site_settings:
+    community_fortune_enabled: "Enable community fortune"
+    community_fortune_enabled_description: "Display a random fortune on the search page"
