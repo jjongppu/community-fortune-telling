@@ -1,0 +1,4 @@
+plugins:
+  community_fortune_enabled:
+    default: true
+    client: true
