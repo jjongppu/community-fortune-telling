@@ -10,7 +10,9 @@ export default {
         return;
       }
 
-      api.renderInOutlet("welcome-banner-below-input", "community-fortune");
+      api.decorateWidget("header:after", (helper) => {
+        return helper.h("div.community-fortune", "Your fortune content here");
+      });
     });
   },
 };
