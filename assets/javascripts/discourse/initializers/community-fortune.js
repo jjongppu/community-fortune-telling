@@ -1,7 +1,7 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
 export default {
-  name: "community-fortune",
+  name: "community-fortune-telling",
 
   initialize() {
     withPluginApi("1.17.0", (api) => {
@@ -11,7 +11,7 @@ export default {
       }
 
       api.decorateWidget("header:after", (helper) => {
-        return helper.h("div.community-fortune", "Your fortune content here");
+        return helper.h("div.community-fortune-telling", "Your fortune content here");
       });
     });
   },
