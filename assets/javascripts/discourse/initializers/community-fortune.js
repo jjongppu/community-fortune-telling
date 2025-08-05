@@ -10,8 +10,11 @@ export default {
         return;
       }
 
-      api.decorateWidget("header:after", (helper) => {
-        return helper.h("div.community-fortune-telling", "Your fortune content here");
+      api.renderInOutlet("welcome-banner-below-input", () => {
+        return {
+          component: "community-fortune",
+          args: {}
+        };
       });
     });
   },
