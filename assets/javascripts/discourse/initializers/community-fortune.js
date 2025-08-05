@@ -1,25 +1,25 @@
-import { apiInitializer } from "discourse/lib/api";
+import { withPluginApi } from "discourse/lib/plugin-api";
 
-export default apiInitializer("0.11.1", (api, settings) => {
-  if (!settings.community_fortune_enabled) {
-    return;
-  }
+export default {
+  name: "community-fortune",
 
-  api.onPageChange(() => {
-    const search = document.querySelector(".search-container");
-    if (!search || document.querySelector(".community-fortune")) {
-      return;
-    }
+  initialize() {
+    withPluginApi("0.8.13", (api) => {
+      const siteSettings = api.container.lookup("service:site-settings");
+      if (!siteSettings.community_fortune_enabled) {
+        return;
+      }
 
-    const fortunes = I18n.t("community_fortune.fortunes");
-    if (!fortunes || fortunes.length === 0) {
-      return;
-    }
+      api.decorateWidget("welcome-banner-below-input", (dec) => {
+        const fortunes = I18n.t("community_fortune.fortunes");
+        if (!fortunes || fortunes.length === 0) {
+          return null;
+        }
 
-    const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-    const banner = document.createElement("div");
-    banner.className = "community-fortune";
-    banner.textContent = fortune;
-    search.parentNode.insertBefore(banner, search);
-  });
-});
+        const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+        return dec.h("div.community-fortune", fortune);
+      });
+    });
+  },
+};
+
