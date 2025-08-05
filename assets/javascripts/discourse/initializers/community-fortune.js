@@ -12,7 +12,7 @@ export default {
 
       api.renderInOutlet("welcome-banner-below-input", () => {
         return {
-          component: "community-fortune",
+          component: "community-fortune-telling",
           args: {}
         };
       });
