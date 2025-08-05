@@ -6,7 +6,7 @@
 
 enabled_site_setting :community_fortune_enabled
 
-register_asset "stylesheets/common/community-fortune.scss"
+register_asset "stylesheets/common/community-fortune-telling.scss"
 
 after_initialize do
   # 클라이언트 전용 기능
