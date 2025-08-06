@@ -10,11 +10,8 @@ export default {
         return;
       }
 
-      api.renderInOutlet("above-main-container", () => {
-        return {
-          component: "community-fortune-telling",
-          args: {}
-        };
+      api.decorateWidget("discovery-list-controls-before", (helper) => {
+        return helper.h("div.community-fortune-telling", "Your fortune content here");
       });
     });
   },
