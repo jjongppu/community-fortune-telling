@@ -10,7 +10,7 @@ export default {
         return;
       }
 
-      api.renderInOutlet("welcome-banner-below-input", () => {
+      api.renderInOutlet("above-main-container", () => {
         return {
           component: "community-fortune-telling",
           args: {}
